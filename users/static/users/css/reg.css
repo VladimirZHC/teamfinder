@@ -43,6 +43,14 @@
         gap: 15px;
         top: 12px;
     }
+    #erroremailID {
+        color: rgb(240, 24, 24);
+        font-family: 'Lato', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        max-width: 302px;
+    }
 }
 
 
@@ -218,9 +226,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    position: relative;
-    right: 20px;
-    top: 12px;
+    max-width: 302px;
 }
 
 .errorpass {
@@ -231,6 +237,7 @@
     font-weight: 400;
     position: relative;
     margin-bottom: 10px;
+    max-width: 302px;
 }
 
 .error {
@@ -238,13 +245,4 @@
     font-size: 14.5px;
 }
 
-.error1 {
-    color: red;
-    font-size: 14.5px;
-}
-
-.error2 {
-    color: red;
-    font-size: 14.5px;
-}
 

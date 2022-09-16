@@ -26,7 +26,6 @@ urlpatterns = [
     path('team/<int:pk>', userViews.TeamDetailView.as_view(), name='team'),
     path('profile/<int:pk>/user-teams', userViews.UserTeamView.as_view(), name='user-teams'),
     path('update-team/<int:team_id>', userViews.update_team, name='update-team'),
-    path('invite/', userViews.invite, name='invite')
 ]
 
 if settings.DEBUG:

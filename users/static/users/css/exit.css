@@ -1,10 +1,30 @@
-.exit {
-    position: absolute;
-    top: 400px;
-    left: 640px;
+@media screen and (max-width: 924px) {
+    #exitID {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        max-width: 400px;
+        margin: 250px 20px;
+        align-items: flex-start;
+    }
 }
 
-.exit a {
+
+.exit {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    justify-content: center;
+    max-width: 600px;
+    margin: 250px auto;
+    align-items: center;
+}
+
+ .exit a {
     text-decoration: none;
 }
 
@@ -17,11 +37,8 @@
     font-weight: 400;
     letter-spacing: 1.05px;
     line-height: normal;
-    margin-top: -1px;
     min-width: 363px;
     mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
 }
 
 .text-b {
@@ -36,10 +53,6 @@
     margin-top: -1px;
     min-width: 187px;
     mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
-    left: 110px;
-    margin-top: 10px;
 }
 
 .pref {
@@ -69,8 +82,4 @@
     margin-top: -1px;
     min-width: 187px;
     mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
-    left: 95px;
-    margin-top: 10px;
-}
+} 

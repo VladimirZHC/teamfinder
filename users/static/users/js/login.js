@@ -4,9 +4,9 @@ $(document).ready(function(){
             $("#hide").hide();
         });
     });
-    setTimeout(function(){ $("#hide").fadeOut(500,function() {
-        $("#hide").hide();
-    }); }, 5000);
+    // setTimeout(function(){ $("#hide").fadeOut(500,function() {
+    //     $("#hide").hide();
+    // }); }, 35000);
 });
 
 let id = (id) => document.getElementById(id);

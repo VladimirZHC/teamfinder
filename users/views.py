@@ -38,7 +38,7 @@ class CreateUser(SuccessMessageMixin,CreateView):
     model = CustomUser
     success_url = reverse_lazy("login")
     template_name = 'users/registration.html'
-    success_message = "%(email)s был успешно создан!"
+    success_message = "%(email)s был создан!"
     
     
     def get_success_message(self, cleaned_data):
@@ -167,27 +167,27 @@ def update_team(request, team_id):
     return render(request, 'users/update_team.html', {'team': team})
 
 
-def invite(request):
-    team = get_object_or_404(Team, pk=request.user.profile.active_team_id, members__in=[request.user])
+# def invite(request):
+#     team = get_object_or_404(Team, pk=request.user.profile.active_team_id, members__in=[request.user])
     
-    if request.method == 'POST':
-        email = request.POST.get('email')
+#     if request.method == 'POST':
+#         email = request.POST.get('email')
         
-        if email:
-            invitations = Invite.objects.filter(team=team, email=email)
+#         if email:
+#             invitations = Invite.objects.filter(team=team, email=email)
             
-            if not invitations:
-                code = ''.join(random.choice('abcdefghhijklmnopqrstuvwxyz1234567890') for i in range(4))
-                invitation = Invite.objects.create(team=team, email=email, code=code)
+#             if not invitations:
+#                 code = ''.join(random.choice('abcdefghhijklmnopqrstuvwxyz1234567890') for i in range(4))
+#                 invitation = Invite.objects.create(team=team, email=email, code=code)
                 
-                messages.info(request, 'Пользователь был приглашен')
+#                 messages.info(request, 'Пользователь был приглашен')
                 
-                send_invitation(email, code, team)
+#                 send_invitation(email, code, team)
                 
-                return redirect('team', team_id=team.id)
-            else:
-                messages.info(request, 'Пользователь уже приглашён')
-    return render(request, 'users/invite.html', {'team': team})
+#                 return redirect('team', team_id=team.id)
+#             else:
+#                 messages.info(request, 'Пользователь уже приглашён')
+#     return render(request, 'users/invite.html', {'team': team})
 
 def password_reset_request(request):
     if request.method == "POST":

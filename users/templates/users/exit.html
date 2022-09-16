@@ -10,10 +10,10 @@
 {%endblock%}
 
 {% block content %}
-<div class="exit">
+<div class="exit" id="exitID">
     <div class="text-s">Вы успешно вышли с аккаунта</div>   
-    <div class="text-b"> Желаете войти снова? <a href="{% url 'login' %}" class="pref"> Войти</a> </div>
-    <div class="text-h"><a href="{% url 'home' %}" class="pref"> Вернуться на главную страницу</a> </div>
+    <div class="text-b" id="againID"> Желаете войти снова? <a href="{% url 'login' %}" class="pref"> Войти</a> </div>
+    <div class="text-h"><a href="{% url 'home' %}" class="pref" id="backtohomeID"> Вернуться на главную страницу</a> </div>
 </div>
 {%endblock%}
 

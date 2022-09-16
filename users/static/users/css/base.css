@@ -107,7 +107,7 @@ body {
         border-radius: 6px;
         gap: 10px;
         height: min-content;
-        right: 75px;
+        right: 55px;
         mix-blend-mode: normal;
         padding: 10px 20px;
         position: absolute;
@@ -423,7 +423,7 @@ body {
     border-radius: 6px;
     gap: 10px;
     height: min-content;
-    right: 500px;
+    right: 470px;
     mix-blend-mode: normal;
     padding: 10px 20px;
     position: absolute;

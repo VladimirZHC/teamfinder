@@ -1,10 +1,10 @@
 @media screen and (max-width: 924px) {
     #loginID {
-        align-items: flex-start;
+        align-items: center;
         background-color: transparent;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 10px;
         height: auto;
         justify-content: center;
         max-width: 300px;
@@ -13,14 +13,14 @@
 }
 
 .login {
-    align-items: flex-start;
+    align-items: center;
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
     height: auto;
     justify-content: center;
-    max-width: 400px;
+    max-width: 600px;
     margin: 200px auto;
 }
 
@@ -36,8 +36,6 @@
     margin-top: -1px;
     min-width: 83px;
     mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
 }
 
 .frame-121 {
@@ -49,7 +47,6 @@
     height: auto;
     position: relative;
     width: auto;
-    margin-top: 20px;
 }
 
 
@@ -68,34 +65,36 @@
     align-items: flex-start;
     background-color: white;
     border-radius: 8px;
-    border: 1px solid rgb(199, 197, 197);
     display: flex;
     gap: 10px;
     height: auto;
+    margin-bottom: -1px;
     margin-left: -1px;
-    margin-right: -1px;
     margin-top: -1px;
     mix-blend-mode: normal;
     padding: 10px 10px 10px 15px;
     position: relative;
     width: 302px;
+    border: 1px solid rgb(199, 197, 197);
+    margin-top: 7px;
 }
 
 .password-input {
     align-items: flex-start;
     background-color: white;
     border-radius: 8px;
-    border: 1px solid rgb(199, 197, 197);
     display: flex;
     gap: 10px;
     height: auto;
+    margin-bottom: -1px;
     margin-left: -1px;
-    margin-right: -1px;
     margin-top: -1px;
     mix-blend-mode: normal;
     padding: 10px 10px 10px 15px;
     position: relative;
-    width: 302px; 
+    width: 302px;
+    border: 1px solid rgb(199, 197, 197);
+    margin-top: 7px;
 }
 
 ::placeholder {
@@ -116,6 +115,9 @@
     font-family: 'Lato', sans-serif;
   }
 
+.danger::-webkit-input-placeholder {
+    color: #e90a0a
+}
 
 .frame-7 {
     top: 25px;
@@ -231,15 +233,10 @@
     position: relative;
 }
 
-.alert {
-    position: relative;
-}
-
 
 .error {
     color: red;
     font-size: 14.5px;
-    position: relative;
 }
 
 
@@ -248,37 +245,40 @@
 }
 
 .alert {
-    position: absolute;
+    top: 130px;
     align-items: flex-start;
     border: 1px none;
     border-radius: 8px;
     display: flex;
     height: auto;
-    top: -40px;
     mix-blend-mode: normal;
     padding: 5px 5px;
-    width: 390px;
-    background-color: #43c437;
+    width: auto;
+    background-color: #45b93a;
     color: white;
     font-size: 20px;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
 }
 
 .btn-close {
     background:none;
     border:none;
     cursor:pointer;
-    position: absolute;
-    left: 355px;
+    display: flex;
     transition: 200ms;
     transition-timing-function: ease-in-out;
     -webkit-transition: 200ms;
     -webkit-transition-timing-function: ease-in-out;
     outline: none;
-    top: 3px;
+    margin-left: 5px;
+    margin-top: 2px;
 }
 
 .icon-close {

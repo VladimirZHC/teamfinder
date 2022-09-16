@@ -24,11 +24,11 @@
                     <div class="email-form" id="emailformID">
                         <input type="email" name="email" maxlength="100" autofocus="" class="frame-44" placeholder="Еmail" id="id_email" title="Почта пользователя(обязательно)">
                         <div class="error2"></div>
-                    </div>
-                    <div class="erroremail">
+                        <div class="erroremail" id="erroremailID">
                         {% for error in form.errors.email %}
                             Пользователь с таким <b> email </b> уже существует!
                         {% endfor %}
+                    </div>
                     </div>
                 </div>
                 <div class="frame-415" id="pairframeID">
@@ -36,8 +36,10 @@
                     <input type="text" name="date_birth" maxlength="50" class="frame-44 check" placeholder="Год рождения" id="id_date_birth" title="Год рождения(4 цифры)" pattern="[0-9]{4}">
                 </div>
                 <div class="frame-49">
-                    <div class="errorpass">
-                        {{ form.errors.password2 }}
+                    <div class="errorpass" id="erroremailID">
+                        {% for error in form.errors.password2 %}
+                            {{ error }}
+                        {% endfor %}
                     </div>
                     <input type="password" name="password1" autocomplete="new-password" class="frame-44" placeholder="Пароль"  id="id_password1" title="Пароль(обязательно)">
                     <div class="error"></div>
