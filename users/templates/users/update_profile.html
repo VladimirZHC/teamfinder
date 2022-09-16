@@ -1,0 +1,73 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/update-profile.css' %}">
+{% endblock %}
+
+{% block title%}
+   Изменение профиля
+{%endblock%}
+
+{% block content %}
+    <div class="update-profile">
+        <div class="frame-83">
+            <img src="{{ MEDIA_URL }} {{ user.profile.img.url }}" class="photo" alt="{{user.profile.full_name}}">
+        </div>
+        <div class="frame-131">
+            <form method="post" enctype="multipart/form-data" class="update-form" id="userForm">
+                {% csrf_token %}
+                <div class="input-file-row">
+                    <label for="id_img" class="input-file">
+                        <input type="file" name="img" accept="image/*" class="up" placeholder="" id="id_img">
+                    </label>
+                    <div class="input-file-list"></div>
+                </div>
+                <div class="frame-128">
+                    <div class="name lato-semi-bold-ship-gray-23px"> Ваше имя </div>
+                    <input type="text" name="full_name" value="{{ user.profile.full_name|default_if_none:'' }}" maxlength="100" class="form lato-normal-ship-gray" placeholder="" id="id_full_name">
+                </div>
+                <div class="frame-128">
+                    <div class="name lato-semi-bold-ship-gray-23px"> Год рождения </div>
+                    <input type="text" name="date_birth" value="{{ user.profile.date_birth|default_if_none:'' }}" maxlength="50" class="form lato-normal-ship-gray" placeholder="" id="id_date_birth" pattern="[0-9]{4}" title="Год рождения(4 цифры)">
+                </div>
+                <div class="frame-128">
+                    <div class="name lato-semi-bold-ship-gray-23px"> Город проживания </div>
+                    <input type="text" name="town" value="{{ user.profile.town|default_if_none:'' }}" maxlength="50" class="form lato-normal-ship-gray" placeholder="" id="id_town">
+                </div>
+                <div class="frame-130">
+                    <div class="name lato-semi-bold-ship-gray-23px"> Добавить ссылку на соцсети </div>
+                    <input type="url" name="instagram" value="{{ user.profile.instagram|default_if_none:'' }}" maxlength="150" class="form lato-normal-ship-gray" placeholder="Instagram" id="id_instagram">
+                    <input type="url" name="vk" value="{{ user.profile.vk|default_if_none:'' }}" maxlength="150" class="form lato-normal-ship-gray" placeholder="VK" id="id_vk">
+                    <input type="url" name="facebook" value="{{ user.profile.facebook|default_if_none:'' }}" maxlength="150" class="form lato-normal-ship-gray" placeholder="Facebook" id="id_facebook">
+                    <input type="url" name="twitter"  value="{{ user.profile.twitter|default_if_none:'' }}" maxlength="150" class="form lato-normal-ship-gray" placeholder="Instagram" id="id_twitter">
+                </div>
+                <div class="frame-134">
+                    <div class="frame-128">
+                        <div class="name lato-semi-bold-ship-gray-23px"> О себе </div>
+                        <textarea name="info" maxlength="400" class="form-about lato-normal-ship-gray" id="id_info"> {{ user.profile.info|default_if_none:'' }}</textarea>
+                    </div>
+                    <div class="frame-128">
+                        <div class="name lato-semi-bold-ship-gray-23px"> Образование </div>
+                        <input type="text" name="education" value="{{ user.profile.education|default_if_none:'' }}" maxlength="50" class="form1 lato-normal-ship-gray" placeholder="" id="id_education">
+                    </div>
+                    <div class="frame-128">
+                        <div class="name lato-semi-bold-ship-gray-23px"> Опыт работы </div>
+                        <input type="text" name="work_experience" value="{{ user.profile.work_experience|default_if_none:'' }}" maxlength="100" class="form1 lato-normal-ship-gray" placeholder="" id="id_work_experience">
+                    </div>
+                    <div class="frame-128">
+                        <div class="name lato-semi-bold-ship-gray-23px"> Общественная деятельность </div>
+                        <input type="text" name="public_activities" value="{{ user.profile.public_activities|default_if_none:'' }}" maxlength="300" class="form1 lato-normal-ship-gray" placeholder="" id="id_public_activities">
+                    </div>
+                </div>
+                <div class="frame-128">
+                    <button class="btn btn-primary" type="submit"> Сохранить изменения </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{% static 'users/js/update-profile.js' %}" defer></script>
+{% endblock %}

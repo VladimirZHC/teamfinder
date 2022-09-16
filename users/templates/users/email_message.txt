@@ -1,0 +1,13 @@
+{{ site_name }}
+{% autoescape off %}
+Привет {{ name }},
+
+Перейди по этой ссылке, чтобы зарегестрировать новый пароль!
+
+{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
+
+Эта ссылка может использоваться только раз!
+
+Твой email для авторизации на сайте - {{ email }}
+
+{% endautoescape %}

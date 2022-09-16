@@ -1,0 +1,89 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/home.css' %}">
+{% endblock %}
+
+{% block title%}
+    Главная страница
+{%endblock%}
+
+{% block content %}
+    <div class="home">
+        <div class="frame-13" id="searchID">
+            <form autocomplete="off" id="search-form" method="post" class="frame-13">
+                {% csrf_token %}
+                <input type="text" id="search-input" class="text_label" placeholder="Поиск по командам">
+                <input type="submit" value="" class="iii" id="searchiconID" title="Поиск">
+            </form>
+        </div>
+        <div class="frame-14" id="sortcountID">
+            <div class="text_label-s lato-normal-ship-gray">Cортировать по: </div>
+        </div>
+        <div class="frame-15" id="sortdateID">
+            <div class="text_label-d lato-normal-ship-gray">Даты </div>
+        </div>
+        <div class="block-teams" id="teamID">
+            {% for team in target %}
+                <a href="{% url 'team' team.id %}" class="icon-team">
+                    <div class="frame-19">
+                        <div class="frame-26">
+                            <div class="frame-17">
+                                <div class="frame-21">
+                                    <img src="{{ team.img.url }}" alt="" class="unsplash">
+                                </div>
+                                <div class="frame-25">
+                                    <div class="text_label_t valign-text-middle lato-semi-bold-ship-gray-23px"> {{ team.name }} </div>
+                                </div>
+                            </div>
+                            <div class="text_label valign-text-middle lato-semi-bold-ship-gray-20px"> {{team.description|striptags|truncatechars:50}} </div>
+                            <div class="frame-20">
+                                <div class="frame-19-pl">
+                                    <div class="valign-text-middle players  lato-normal-ship-gray"> {{team.members.all|length}} / {{team.count_of_players}} участников </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sbor valign-text-middle lato-normal-ship-gray"> Cбор до  </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="pages">
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <div class="start-button lato-bold-white-20px-entry">
+                        <a href="/" class="last-page"> Начало</a> 
+                    </div>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="icon">
+                        <svg class="page-icon" data-name="Livello 1" id="Livello_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><title/>
+                            <path d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z"/>
+                            <path d="M74.12,35.88a3,3,0,0,0-4.24,0l-26,26a3,3,0,0,0,0,4.24l26,26a3,3,0,0,0,4.24-4.24L50.24,64,74.12,40.12A3,3,0,0,0,74.12,35.88Z"/>
+                        </svg>
+                    </a>
+                {% endif %}
+    
+                {% for num in page_obj.paginator.page_range %}
+                    {% if num == page_obj.number %}
+                        <button class="btn btn-info"> {{ num }}</button>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="btn btn-outline"> {{num }}</a>
+                    {% endif %}
+                {% endfor %}
+    
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="icon">
+                        <svg class="page-icon" data-name="Livello 1" id="Livello_1" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><title/>
+                            <path d="M64,0a64,64,0,1,0,64,64A64.07,64.07,0,0,0,64,0Zm0,122a58,58,0,1,1,58-58A58.07,58.07,0,0,1,64,122Z"/>
+                            <path d="M58.12,35.88a3,3,0,0,0-4.24,4.24L77.76,64,53.88,87.88a3,3,0,1,0,4.24,4.24l26-26a3,3,0,0,0,0-4.24Z"/>
+                        </svg>
+                    </a>
+                    <div class="end-button lato-bold-white-20px">
+                        <a href="?page={{ page_obj.paginator.num_pages }}" class="last-page"> Последняя </a>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{%endblock%}
+

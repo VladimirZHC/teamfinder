@@ -1,0 +1,14 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block title%}
+    Приглашение
+{%endblock%}
+
+{% block content %}
+
+<nav class="bradcrumb" aria-label="breadcrumbs">
+   <li class="is-active"><a href="{% url 'invite' %}"> Пригласить </a></li> 
+</nav>
+
+{% endblock %}

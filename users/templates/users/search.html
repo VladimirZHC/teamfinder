@@ -1,0 +1,24 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+
+{% block title%}
+    Поиск
+{%endblock%}
+
+{% block content %}
+<body>
+    <div class="w-100 text-center">
+        <form autocomplete="off" id="search-form" method="post">
+            {% csrf_token %}
+            <input type="text" id="search-input" class="text_label" placeholder="Поиск пользователей">
+        </form>
+        <div id="results-box" class="results-card not-visible">
+        </div>   
+    </div>
+</body>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{% static 'users/js/search.js' %}" defer></script>
+{% endblock %}

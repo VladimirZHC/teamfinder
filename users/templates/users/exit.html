@@ -1,0 +1,19 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/exit.css' %}">
+{% endblock %}
+
+{% block title%}
+    Выход
+{%endblock%}
+
+{% block content %}
+<div class="exit">
+    <div class="text-s">Вы успешно вышли с аккаунта</div>   
+    <div class="text-b"> Желаете войти снова? <a href="{% url 'login' %}" class="pref"> Войти</a> </div>
+    <div class="text-h"><a href="{% url 'home' %}" class="pref"> Вернуться на главную страницу</a> </div>
+</div>
+{%endblock%}
+

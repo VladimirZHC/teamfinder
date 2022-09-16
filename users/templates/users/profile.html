@@ -1,0 +1,201 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/profile.css' %}">
+{% endblock %}
+
+{% block title%}
+    Кабинет Пользователя
+{%endblock%}
+
+{% block content %}
+    <div class="profile-owner">
+        {% if messages %}
+                {% for mess in messages %}
+                    <div class="alert" id="hide">
+                        <button class="btn-close">
+                            <svg class="icon-close" enable-background="new 0 0 256 256" height="256px" id="Layer_1" version="1.1" viewBox="0 0 256 256" width="256px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M183.191,174.141c2.5,2.498,2.5,6.552,0,9.05c-1.249,1.25-2.889,1.875-4.525,1.875c-1.638,0-3.277-0.625-4.525-1.875  l-46.142-46.142L81.856,183.19c-1.249,1.25-2.888,1.875-4.525,1.875c-1.638,0-3.277-0.625-4.525-1.875c-2.5-2.498-2.5-6.552,0-9.05  l46.143-46.143L72.806,81.856c-2.5-2.499-2.5-6.552,0-9.05c2.497-2.5,6.553-2.5,9.05,0l46.142,46.142l46.142-46.142  c2.497-2.5,6.553-2.5,9.051,0c2.5,2.499,2.5,6.552,0,9.05l-46.143,46.142L183.191,174.141z M256,128C256,57.42,198.58,0,128,0  C57.42,0,0,57.42,0,128c0,70.58,57.42,128,128,128C198.58,256,256,198.58,256,128z M243.2,128c0,63.521-51.679,115.2-115.2,115.2  c-63.522,0-115.2-51.679-115.2-115.2C12.8,64.478,64.478,12.8,128,12.8C191.521,12.8,243.2,64.478,243.2,128z"/></svg>
+                        </button>
+                        {{ mess }}
+                    </div>
+                {%endfor%}
+        {% endif %}
+        <div class="frame-83">
+            <img class="bd-placeholder-img" src="{{ target.img.url }}">
+        </div>
+        <div class="frame-85">
+            <div class="frame-84">
+                <div class="text-label-n lato-semi-bold-ship-gray-23px"> {{target.full_name|default_if_none:""}} </div>
+            </div>
+            <div class="age lato-normal-ship-gray"> {{target.get_date_birth|default_if_none:""}} </div>
+            <div class="city lato-normal-ship-gray"> {{target.town|default_if_none:""}} </div>
+            <div class="social-media">
+                {% if target.vk|length %}
+                    <div class="frame-icon">
+                        <a href="{{ target.vk }}" target="_blank" class="icon">
+                            <svg class="frame-icon-3" enable-background="new 0 0 30 30" height="30px" id="Vkontakte" version="1.1" viewBox="0 0 30 30" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path clip-rule="evenodd" d="M16,24c1,0,1-1.441,1-2c0-1,1-2,2-2s2.715,1.715,4,3c1,1,1,1,2,1s3,0,3,0  s2-0.076,2-2c0-0.625-0.685-1.685-3-4c-2-2-3.026-0.967,0-5c1.843-2.456,3.184-4.681,2.954-5.323C29.734,7.064,24.608,6.088,24,7  c-2,3-2.367,3.735-3,5c-1,2-1.099,3-2,3c-0.909,0-1-1.941-1-3c0-3.306,0.479-5.644-1-6c0,0-2,0-3,0c-1.61,0-3,1-3,1  s-1.241,0.968-1,1c0.298,0.04,2-0.414,2,1c0,1,0,2,0,2s0.009,4-1,4c-1,0-3-4-5-7C5.215,6.823,5,7,4,7C2.928,7,2.001,7.042,1,7.042  C0,7.042-0.128,7.679,0,8c2,5,3.437,8.14,7.237,12.096C10.722,23.725,13.05,23.918,15,24C15.5,24.021,15,24,16,24z" fill-rule="evenodd" id="VK"/>
+                            </svg>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="frame-icon">
+                        <svg class="frame-icon-check disabled" enable-background="new 0 0 30 30" height="30px" id="Vkontakte" version="1.1" viewBox="0 0 30 30" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path clip-rule="evenodd" d="M16,24c1,0,1-1.441,1-2c0-1,1-2,2-2s2.715,1.715,4,3c1,1,1,1,2,1s3,0,3,0  s2-0.076,2-2c0-0.625-0.685-1.685-3-4c-2-2-3.026-0.967,0-5c1.843-2.456,3.184-4.681,2.954-5.323C29.734,7.064,24.608,6.088,24,7  c-2,3-2.367,3.735-3,5c-1,2-1.099,3-2,3c-0.909,0-1-1.941-1-3c0-3.306,0.479-5.644-1-6c0,0-2,0-3,0c-1.61,0-3,1-3,1  s-1.241,0.968-1,1c0.298,0.04,2-0.414,2,1c0,1,0,2,0,2s0.009,4-1,4c-1,0-3-4-5-7C5.215,6.823,5,7,4,7C2.928,7,2.001,7.042,1,7.042  C0,7.042-0.128,7.679,0,8c2,5,3.437,8.14,7.237,12.096C10.722,23.725,13.05,23.918,15,24C15.5,24.021,15,24,16,24z" fill-rule="evenodd" id="VK"/>
+                        </svg>
+                    </div>
+                {% endif %}
+                {% if target.instagram|length %}
+                    <div class="frame-icon">
+                        <a href="{{ target.instagram }}" target="_blank" class="icon">
+                            <svg class="frame-icon-5"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">
+                                <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/>
+                            </svg>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="frame-icon">
+                        <svg class="frame-icon-check1 disabled"  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">
+                            <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"/>
+                        </svg>
+                    </div>
+                {% endif %}
+                {% if target.facebook|length %}
+                    <div class="frame-icon">
+                        <a href="{{ target.facebook }}" target="_blank" class="icon">
+                            <svg class="frame-icon-5" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                                <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                            </svg>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="frame-icon">
+                        <svg class="frame-icon-check1 disabled" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                            <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                        </svg>
+                    </div>
+                {% endif %}
+                {% if target.twitter|length %}
+                    <div class="frame-icon">
+                        <a href="{{ target.twitter }}" target="_blank" class="icon">
+                            <svg class="frame-icon-3" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">
+                                <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"/>
+                            </svg>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="frame-icon">
+                        <svg class="frame-icon-check disabled" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">
+                            <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"/>
+                        </svg>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% if target.id == user.id and user.is_authenticated %}
+            <div class="frame-96">
+                <a href="{% url 'update_profile' user.id %}">
+                    <button class="btn-update btn-outline-dark lato-semi-bold-ship-gray-23px"> Редактировать профиль </button>
+                </a>
+            </div>
+        {% else  %}
+            <div class="frame-96">
+            </div>
+        {% endif %}
+        <div class="frame-86">
+            <div class="text-label-a lato-semi-bold-ship-gray-23px">О себе </div>
+            <div class="view-about">
+                {% if target.info|length > 300 %}
+                    <div class="half-content info-about lato-normal-ship-gray" id="half-{{target.id}}">
+                        <div class="text">
+                            {{ target.info|truncatechars:300 }}
+                        </div>
+                        <a data-id="{{target.id}}" href="javascript:void();" class="show-hide-btn lato-normal-ship-gray">Подробнее <hr></a>
+                    </div>
+                    <div class="full-content info-about lato-normal-ship-gray" id="full-{{target.id}}" style="display: none;">{{ target.info }}
+                        <a data-id="{{target.id}}" href="javascript:void();" class="show-full-btn lato-normal-ship-gray">Убрать <hr class="hr-dashed-bg"></a>
+                    </div>
+                {% else %}
+                    <div class="info-about lato-normal-ship-gray"> {{target.info|default_if_none:""}} </div>
+                {% endif %}
+            </div>
+            <div class="frame-90">
+                <div class="frame-89">
+                    <img class="vector" src="/pictures/icons/ed.svg" alt="">
+                    <div class="education lato-normal-ship-gray">Образование: {{target.education|default_if_none:""}} </div>
+                </div>
+                <div class="frame-87">
+                    <img class="vector1" src="/pictures/icons/exp.svg" alt="">
+                    <div class="exp lato-normal-ship-gray">Опыт работы: {{target.work_experience|default_if_none:""}} </div>
+                </div>
+                <div class="frame-88">
+                    <img class="vector" src="/pictures/icons/good.svg" alt="">
+                    <div class="public lato-normal-ship-gray">Общественная деятельность: 
+                       <div class="info">
+                            {{target.public_activities|default_if_none:""}} 
+                       </div> 
+                    </div>
+                </div>
+                {% if target.id == user.id %}
+                    <div class="frame-99">
+                        <a href="{% url 'team-create' %}">
+                            <button class="btn btn-outline-dark"> Cоздать команду </button>
+                        </a>
+                    </div>
+                {% elif not user.is_authenticated %}
+                    <div class="frame-99 lato-normal-ship-gray"> Нет аккаунта? Зарегестрируйтесь, чтобы создавать команды и приглашать в них участников! <a href="{% url 'login' %}"> Войти</a> </div>
+                {% else  %}
+                    <div class="frame-99">
+                        <a href="">
+                            <button class="btn btn-outline-dark "> Пригласить в команду </button>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="frame-92">
+            <a href="{% url 'user-teams' target.id %}">
+                <div class="frame-98">
+                    <div class="text-label-c lato-semi-bold-ship-gray-23px"> Мои команды </div>
+                    <svg class="arrow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke: none;}</style></defs><title/><g data-name="Layer 2" id="Layer_2">
+                        <path d="M19,26a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L26.59,16l-8.3-8.29a1,1,0,0,1,1.42-1.42l9,9a1,1,0,0,1,0,1.42l-9,9A1,1,0,0,1,19,26Z"/>
+                        <path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z"/></g><g id="frame"><rect class="cls-1" height="32" width="32"/></g>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="block-30">
+            {% for team in target.teams.all|slice:":2" %}
+            <a href="{% url 'team' team.id %}" class="icon-team">
+                <div class="frame-19">
+                    <div class="frame-26">
+                        <div class="frame-17">
+                            <div class="frame-21">
+                                <img src="{{ team.img.url }}" alt="" class="unsplash">
+                            </div>
+                            <div class="frame-25">
+                                <div class="team-title valign-text-middle lato-semi-bold-ship-gray-23px"> {{ team.name }} </div>
+                            </div>
+                        </div>
+                        <div class="description valign-text-middle lato-semi-bold-ship-gray-20px"> {{team.description|striptags|truncatechars:50}} </div>
+                        <div class="frame-20">
+                            <div class="frame-19-pl">
+                                <div class="players valign-text-middle lato-normal-ship-gray"> {{ team.members.all|length }} / {{team.count_of_players}} участников </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sbor1 valign-text-middle lato-normal-ship-gray "> Cбор до </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="frame-93">
+            <div class="finish-teams lato-semi-bold-ship-gray-23px"> Законченные проекты </div>
+        </div>
+    </div>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{% static 'users/js/profile.js' %}" defer></script>
+{% endblock %}

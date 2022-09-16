@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@media screen and (max-width: 924px) {
+    #regID {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        justify-content: center;
+        max-width: 650px;
+        margin: 190px;
+        margin-left: 50px;
+    }
+    #textregID {
+        background-color: transparent;
+        color: #3f3f3f;
+        font-family: 'Lato', sans-serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 1.05px;
+        min-width: 214px;
+        mix-blend-mode: normal;
+        position: relative;
+        text-align: left;
+        line-height: normal;
+    }
+    #pairframeID {
+        align-items: flex-start;
+        background-color: transparent;
+        display: flex;
+        gap: 15px;
+        height: auto;
+        position: relative;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #pairframeID1 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        top: 12px;
+    }
+}
+
+
+::placeholder {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(150, 148, 148);
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0px;
+    line-height: 26px;
+    margin-top: -0.5px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+  }
+
+.danger::-webkit-input-placeholder {
+    color: #e90a0a
+}
+
+.check:valid {
+    color: green;
+  }
+.check:invalid {
+    color: red;
+    border: 2px solid red;
+}
+
+.frame-419 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: auto;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 200px auto;
+}
+
+.frame-419 a {
+    text-decoration: none;
+}
+
+.text_label-n {
+    background-color: transparent;
+    color: #3f3f3f;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.05px;
+    margin-top: -1px;
+    min-width: 214px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    line-height: normal;
+}
+
+.frame-422 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.frame-417 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.frame-415 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    gap: 30px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.frame-44 {
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    padding: 10px 10px 10px 15px;
+    position: relative;
+    width: 302px;
+    border: 1px solid rgb(199, 197, 197);
+    margin-top: 7px;
+}
+
+.btn {
+    background-color: #6f8eff;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    width: 258px;
+    border: 1px solid rgba(111, 142, 255, 1);
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 10px 10px 10px 10px;
+    top: 20px;
+}
+
+.btn:hover {
+    background-color: #617AD1;
+    border: 1px solid #617AD1;
+}
+
+.x86 {
+    background-color: transparent;
+    height: auto;
+    letter-spacing: 0px;
+    position: relative;
+    width: auto;
+    white-space: nowrap;
+    line-height: 26px;
+    color: rgb(204,204,204,1);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.pref {
+    color: rgb(204,204,204,1);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.pref:hover {
+    color: #617AD1;
+}
+
+.erroremail {
+    color: rgb(240, 24, 24);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    right: 20px;
+    top: 12px;
+}
+
+.errorpass {
+    color: rgb(240, 24, 24);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 14.5px;
+}
+
+.error1 {
+    color: red;
+    font-size: 14.5px;
+}
+
+.error2 {
+    color: red;
+    font-size: 14.5px;
+}
+

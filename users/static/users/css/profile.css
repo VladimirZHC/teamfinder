@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --font-family-lato: "Lato";
+}
+
+svg path {
+    fill:inherit;
+    stroke:inherit;
+    stroke-width:inherit;
+    }
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.lato-normal-ship-gray {
+    color:rgba(63, 63, 63, 1);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-semi-bold-ship-gray-20px {
+    color: rgb(99, 97, 97);
+    font-family: 'Lato-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.lato-semi-bold-ship-gray-23px {
+    color: rgba(63, 63, 63, 1);
+    font-family: 'Lato-SemiBold', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-owner a {
+    text-decoration: none;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.profile-owner a:hover {
+    color: #617AD1;
+}
+    
+
+.frame-83 {
+    align-items: flex-start;
+    border: 2.2px solid;
+    border-color: rgba(243, 245, 247, 1);
+    border-radius: 8.8px;
+    left: 318px;
+    display: flex;
+    height: 224px;
+    overflow: hidden;
+    top: 157px;
+    position: absolute;
+    width: 224px;
+}
+
+.bd-placeholder-img {
+    height: 220px;
+    object-fit: cover;
+    width: 220px;
+    background-color: transparent;
+    left: 0px;
+    mix-blend-mode: normal;
+    position: absolute;
+    top: 0px;
+}
+
+.frame-85 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    left: 610px;
+    position: absolute;
+    top: 192px;
+    width: 330px;
+}
+
+.frame-84 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    width: 330px;
+}
+
+.text-label-n {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+}
+
+.age {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.city {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.social-media {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    height: min-content;
+    position: relative;
+    min-width: 132px;
+    gap: 15px;
+}
+
+
+
+.frame-icon-5 {
+    background-color: transparent;
+    height: 20px;
+    min-width: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.frame-icon-3 {
+    background-color: transparent;
+    height: 25px;
+    min-width: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.frame-icon-check1 {
+    background-color: transparent;
+    height: 20px;
+    min-width: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 2px;
+}
+
+.frame-icon-check {
+    background-color: transparent;
+    height: 25px;
+    min-width: 25px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+
+.frame-86 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    left: 320px;
+    position: absolute;
+    top: 409px;
+    width: 620px;
+    
+}
+
+.text-label-a{
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 74px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+}
+
+.view-about {
+    background-color: transparent;
+    height: auto;
+    width: 596px;
+    position: relative;
+}
+
+.info-about {
+    background-color: transparent;
+    height: auto;
+    left: 0px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: 594px;
+}
+
+.show-hide-btn {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    margin-top: 20px;
+    min-width: 105px;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    left: 0px;
+    height: auto;
+}
+
+hr {
+    position: relative;
+    top: -20px;
+    max-width: 105px;
+    border: none;
+	border-top: 2.5px dashed rgba(63, 63, 63, 1);
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+hr:hover {
+    border-top: 2.5px dashed #617AD1;
+}
+
+.hr-dashed-bg {
+    position: relative;
+    top: -20px;
+    max-width: 65px;
+    border: none;
+	border-top: 2.5px dashed rgba(63, 63, 63, 1);
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.show-full-btn {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    margin-top: 40px;
+    min-width: 105px;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    left: 0px;
+}
+
+.grad > .text:first-child {
+    background: -webkit-linear-gradient(#333, #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.frame-90 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: absolute;
+    min-width: 620px;
+    gap: 15px;
+    top:310px;
+}
+
+
+
+.frame-89 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+}
+
+.vector {
+    background-color: transparent;
+    height: 26px;
+    min-width: 26px;
+    mix-blend-mode: normal;
+    position: relative;
+}
+
+.education {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0px;
+    line-height: 26px;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.frame-87 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    min-width: 620;
+}
+
+.frame-88 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+}
+
+.exp {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0px;
+    line-height: 0px;
+    margin-top: 10px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.btn {
+    align-items: flex-start;
+    border: 1px none;
+    border-radius: 6px;
+    display: flex;
+    gap:10px;
+    height: auto;
+    left: 0px;
+    mix-blend-mode: normal;
+    padding: 13px 30px;
+    position: relative;
+    width: auto;
+    background-color: #6f8eff;
+    color: white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #617AD1;
+}
+
+.info {
+    align-items: flex-start;
+    position: relative;
+    left: -35px;
+}
+
+.frame-92 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    left: 976px;
+    padding: 0px 0px 0px 5px;
+    position: absolute;
+    top: 257px;
+    width: auto;
+}
+
+.frame-98 {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    width: auto;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    border: none;
+}
+
+.frame-98:hover {
+    fill: #617AD1;
+    stroke: #617AD1;
+    border: none;
+    color: #617AD1;
+}
+
+.arrow {
+    background-color: transparent;
+    height: 28px;
+    min-width: 28px;
+    mix-blend-mode: normal;
+    position: relative;
+}
+
+.text-label-c {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 151px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    border: none;
+}
+.text-label-c:hover {
+    color: #617AD1;
+}
+
+.icon-team {
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.block-30 {
+    left: 980px;
+    top: 305px;
+    position: absolute;
+    display: flex;
+    gap: 35px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 700px;
+ }
+
+.frame-19 {
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    height: 387px;
+    mix-blend-mode: normal;
+    overflow: hidden;
+    position: relative;
+    width: 290px;
+    transition: 400ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 400ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.frame-19:hover {
+    border: 2px solid #6F8EFF;
+}
+.frame-26 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: auto;
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    width: 250px;
+}
+
+.frame-17 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    width: 250px;
+}
+
+.frame-21 {
+    background-color: transparent;
+    border: 0.8px none;
+    height: 40px;
+    min-width: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.unsplash {
+    background-color: transparent;
+    height: 40px;
+    left: 0px;
+    mix-blend-mode: normal;
+    position: absolute;
+    top: 0px;
+    width: 40px;
+}
+
+.frame-25 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    height: auto;
+    padding: 5px 0px 7px;
+    position: relative;
+}
+
+.team-title {
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+}
+
+.description {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    opacity: 0.5px;
+    position: relative;
+    text-align: left;
+}
+
+.frame-20 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.frame-19-pl {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+
+
+
+.sbor1 {
+    background-color: transparent;
+    height: 26px;
+    left: 86px;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: left;
+    top:341px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.frame-93 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    left: 981px;
+    padding: 0px 0px 0px 5px;
+    position: absolute;
+    top: 732px;
+    width: auto;
+}
+
+.finish-teams {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 240px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+}
+
+.frame-96 {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    left: 1250px;
+    top: 159px;
+    width: auto;
+    position: absolute;
+}
+
+.btn-update {
+    border: 2px solid;
+    border-color: rgba(63, 63, 63, 1);
+    border-radius: 6px;
+    padding: 10px 30px;
+    background-color: transparent;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.alert {
+    position: absolute;
+    align-items: flex-start;
+    border: 1px none;
+    border-radius: 8px;
+    display: flex;
+    height: auto;
+    left: 320px;
+    top: 110px;
+    mix-blend-mode: normal;
+    padding: 5px 5px;
+    width: 290px;
+    background-color: #43c437;
+    color: white;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.btn-close {
+    background:none;
+    border:none;
+    cursor:pointer;
+    position: absolute;
+    left: 250px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    outline: none;
+    top: 3px;
+}
+
+.icon-close {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    fill: white;
+    stroke: white;
+} 
+
+.btn-close:hover {
+    transform: scale(1.09);
+    border: none;
+    background: none;
+    outline: none;
+}
+

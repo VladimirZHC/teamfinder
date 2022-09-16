@@ -1,0 +1,76 @@
+.exit {
+    position: absolute;
+    top: 400px;
+    left: 640px;
+}
+
+.exit a {
+    text-decoration: none;
+}
+
+.text-s {
+    background-color: transparent;
+    color: #3f3f3f;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.05px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 363px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+}
+
+.text-b {
+    background-color: transparent;
+    color: rgb(109, 108, 108);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 187px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    left: 110px;
+    margin-top: 10px;
+}
+
+.pref {
+    color: #6F8EFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.pref:hover {
+    color: #617AD1;
+}
+
+.text-h {
+    background-color: transparent;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    min-width: 187px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    left: 95px;
+    margin-top: 10px;
+}

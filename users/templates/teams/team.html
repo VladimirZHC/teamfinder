@@ -1,0 +1,47 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block title%}
+    {{ team.name }}
+{%endblock%}
+
+{% block content %}
+{% if team.owner == request.user %}
+    <div class="columns" id="team-app">
+        <div class="column is-4">
+            <h1 class="title"> {{ team.name  }} </h1>
+            <hr>
+            <h1 class="title"> {{ team.description }} </h1>
+            <h2 class="subtitile mt-6"> Участники команды </h2>
+            {% for member in team.members.all %}
+                <p> {{ member.email }} </p>
+            {% endfor %}
+            {{ team.members.all|length }} / {{team.count_of_players}}
+            <h2 class="subtitile mt-6"> Желающие вступить </h2>
+            <h3 class="is-size-5"><a href="{% url 'update-team' team.id %}" class="ml-2">
+                <button class="btn btn-outline-info">Изменить команду </button>
+            </a></h3>
+            <h3 class="is-size-5"><a href="{% url 'invite' %}" class="ml-2">
+                <button class="btn btn-outline-info"> Пригласить участников  </button>
+            </a></h3>
+        </div>
+    </div>
+{% else %}
+<div class="columns" id="team-app">
+    <div class="column is-4">
+        <h1 class="title"> {{ team.name  }} </h1>
+        <hr>
+        <h1 class="title"> {{ team.description }} </h1>
+        <h2 class="subtitile mt-6"> Участники команды </h2>
+        {% for member in team.members.all %}
+            <p> {{ member.email }} </p>
+        {% endfor %}
+        {{ team.members.all|length }} / {{team.count_of_players}}
+        <h2 class="subtitile mt-6"> Желающие вступить </h2>
+        <h3 class="is-size-5"><a href="{% url 'invite' %}" class="ml-2">
+            <button class="btn btn-outline-info"> Оставить заявку  </button>
+        </a></h3>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

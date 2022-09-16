@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --font-family-lato: "Lato";
+}
+
+svg path {
+    fill:inherit;
+    stroke:inherit;
+    stroke-width:inherit;
+    }
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.lato-normal-ship-gray {
+    color:rgba(63, 63, 63, 1);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-semi-bold-ship-gray-20px {
+    color: rgb(99, 97, 97);
+    font-family: 'Lato-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.lato-semi-bold-ship-gray-23px {
+    color: rgba(63, 63, 63, 1);
+    font-family: 'Lato-SemiBold', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.frame-83 {
+    background-color: transparent;
+    border: 2.2px solid;
+    border-color: rgba(243, 245, 247, 1);
+    border-radius: 8.8px;
+    height: 224px;
+    left: 318px;
+    overflow: hidden;
+    position: absolute;
+    top: 157px;
+    width: 224px;
+    backdrop-filter: blur(240px);
+    object-fit: cover;
+}
+
+.photo {
+    height: 220px;
+    left: 0px;
+    mix-blend-mode: normal;
+    position: absolute;
+    top: 0px;
+    width: 220px;
+    object-fit: cover;
+    filter: blur(1px);
+}
+
+.input-file {
+    background: url("/pictures/icons/photo.svg") no-repeat  50% 50%;
+    height: 110px;
+    position: absolute;
+    width: 70px;
+    left: -215px;
+    top: 80px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    white-space: nowrap;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.input-file:hover {
+    transform: scale(1.2)
+}
+
+.up {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.input-file-list {
+	padding: 10px 0;
+    position: absolute;
+    top: 250px;
+    left: -290px;
+}
+
+
+
+.input-file-list-item {
+    object-fit: cover;
+    border: 2.2px solid;
+    border-color: rgba(243, 245, 247, 1);
+    border-radius: 8.8px;
+    position: relative;
+
+}
+
+.input-file-list-img {
+    object-fit: cover;
+    border: 2.2px solid;
+    border-color: rgba(243, 245, 247, 1);
+    border-radius: 8.8px;
+    position: relative;
+    width: 220px;
+    height: 220px;
+}
+
+.input-file-list-name {
+	text-align: center;
+	display: block;
+	font-size: 19px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.input-file-list-remove {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 5px;
+	right: 5px;
+	background: #ff0202;
+	width: 20px;
+	height: 19px;
+	text-align: center;
+	line-height: 16px;
+	border-radius: 50%;
+}
+
+
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    left: 610px;
+    top: 129px;
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+}
+
+.frame-127 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    position: relative;
+    width: fit-content;
+}
+
+.name {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: normal;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    width: fit-content;
+}
+
+.form {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    padding: 9px;
+    position: relative;
+    width: 396px;
+}
+
+.form1 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    padding: 9px;
+    position: relative;
+    width: 513px;
+}
+
+
+
+.frame-128 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    position: relative;
+    width: fit-content;
+}
+
+.frame-130 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    position: relative;
+    width: fit-content;
+}
+
+
+.frame-134 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    position: absolute;
+    left: 460px;
+    width: auto;
+    top: 29px;
+
+}
+
+.frame-132 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 208px;
+    position: relative;
+    width: fit-content;
+}
+
+.form-about {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: 170px;
+    padding: 10px;
+    position: relative;
+    width: 513px;
+}
+
+textarea {
+    resize: none;
+ }
+
+
+ .btn {
+    align-items: flex-start;
+    border: 1px none;
+    border-radius: 6px;
+    display: flex;
+    gap:10px;
+    height: auto;
+    left: 0px;
+    mix-blend-mode: normal;
+    padding: 13px 30px;
+    position: relative;
+    width: auto;
+    background-color: #6f8eff;
+    color: white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background-color: #617AD1;
+}

@@ -1,0 +1,28 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/pass-reset.css' %}">
+{% endblock %}
+
+{% block title%}
+    Восстановление пароля
+{%endblock%}
+
+{% block content %}
+    <div class="frame-125" id="resetID">
+        <div class="text-label-m"> Восстановить пароль </div>
+        {% if messages %}
+            {% for mess in messages %}
+                <div class="errorlist-email"> {{ mess }}</div>
+            {%endfor%}
+        {% endif %}
+        <form method="post" class="frame-124">
+            {% csrf_token %}
+            {{ form.errors }}
+            <input class="frame-4" type="email" name="email" autocomplete="email" maxlength="254" required="" id="id_email" placeholder="Email">
+            <button class="btn btn-outline-primary" type="submit"> Прислать подтверждение </button>
+        </form>
+    </div>
+{%endblock%}
+

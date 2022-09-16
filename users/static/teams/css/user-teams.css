@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --font-family-lato: "Lato";
+}
+
+svg path {
+    fill:inherit;
+    stroke:inherit;
+    stroke-width:inherit;
+    }
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+
+.text-label-mt {
+    background-color: transparent;
+    color:rgba(63, 63, 63, 1);
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    font-style: normal;
+    height: auto;
+    left: 330px;
+    letter-spacing: 1.05px;
+    line-height: normal;
+    mix-blend-mode: normal;
+    position: absolute;
+    text-align: left;
+    top: 158px;
+    width: auto;
+}
+
+.block-teams {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 320px;
+    margin-top: 129px;
+    max-width: 1300px;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+
+.frame-19 {
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    height: 387px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px 0;
+    transition: 400ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 400ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.frame-19:hover {
+    border: 2px solid #93a7f0;
+}
+
+.frame-26 {
+    align-items: flex-start;
+    align-self: center;
+    border: 1px none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 250px;
+}
+
+.frame-17 {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    gap: 10px;
+    width: 250px;
+}
+
+.unsplash {
+    background-color: transparent;
+    height: 40px;
+    mix-blend-mode: normal;
+    min-width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    mix-blend-mode: normal;
+}
+
+.frame-25 {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding: 5px 0px 7px;
+}
+
+.text_label {
+    align-self: stretch;
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    word-wrap: break-word;
+    word-break: break-all; 
+}
+
+.frame-20 {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+}
+
+.players {
+    background-color: transparent;
+    letter-spacing: 0px;
+    line-height: 26px;
+    width: fit-content;
+    mix-blend-mode: normal;
+    white-space: nowrap;
+}
+
+.sbor {
+    height: 26px;
+    letter-spacing: 0;
+    line-height: 26px;
+    margin-left: 86px;
+    margin-top: 320px;
+    min-width: 184px;
+    white-space: nowrap;
+    position: absolute;
+}
+
+.frame-99 {
+    margin-bottom: 30px;
+    margin-left: 320px;
+}
+
+.btn {
+    top: auto;
+    align-items: flex-start;
+    border: 1px none;
+    border-radius: 6px;
+    display: flex;
+    gap:10px;
+    height: auto;
+    left: 0px;
+    mix-blend-mode: normal;
+    padding: 13px 30px;
+    width: auto;
+    background-color: #6f8eff;
+    color: white;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.btn:hover {
+    background-color: #617AD1;
+}
+
+

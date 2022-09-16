@@ -1,0 +1,63 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'teams/css/user-teams.css' %}">
+{% endblock %}
+
+{% block title%}
+    Мои команды
+{%endblock%}
+
+{% block content %}
+    <div class="my-teams">
+        {% if target.id == user.id %}
+            <div class="text-label-mt"> Мои команды </div>
+        {% else %}
+            <div class="text-label-mt"> Команды {{ target.email }} ({{ target.full_name }}) </div>
+        {% endif %}
+        <div class="block-teams" id="teamID">
+            {% for team in target.teams.all %}
+                <a href="{% url 'team' team.id %}" class="icon-team">
+                    <div class="frame-19">
+                        <div class="frame-26">
+                            <div class="frame-17">
+                                <div class="frame-21">
+                                    <img src="{{ team.img.url }}" alt="" class="unsplash">
+                                </div>
+                                <div class="frame-25">
+                                    <div class="text_label_t valign-text-middle lato-semi-bold-ship-gray-23px"> {{ team.name }} </div>
+                                </div>
+                            </div>
+                            <div class="text_label valign-text-middle lato-semi-bold-ship-gray-20px"> {{team.description|striptags|truncatechars:50}} </div>
+                            <div class="frame-20">
+                                <div class="frame-19-pl">
+                                    <div class="valign-text-middle players  lato-normal-ship-gray"> {{team.members.all|length}} / {{team.count_of_players}} участников </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sbor valign-text-middle lato-normal-ship-gray"> Cбор до  </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        {% if target.id == user.id %}
+            <div class="frame-99">
+                <a href="{% url 'team-create' %}">
+                    <button class="btn btn-outline-dark"> Cоздать команду </button>
+                </a>
+            </div>
+        {% elif not user.is_authenticated %}
+            <div class="frame-99 lato-normal-ship-gray"> Нет аккаунта? Зарегестрируйтесь, чтобы создавать команды и приглашать в них участников! <a href="{% url 'login' %}"> Войти</a> </div>
+        {% else  %}
+            <div class="frame-99">
+                <a href="">
+                    <button class="btn btn-outline-dark "> Пригласить в команду </button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+{%endblock%}
+
+{% block scripts %}
+{% endblock %}

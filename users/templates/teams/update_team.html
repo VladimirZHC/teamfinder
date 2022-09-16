@@ -1,0 +1,75 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block title%}
+    Редактирование команды
+{%endblock%}
+
+{% block content %}
+
+<div class="columns" id="team-app">
+    <div class="column is-4">
+        <h1 class="title"> Редактируй команду </h1>
+        <form method="post" action="." @submit="validateForm">
+            {% csrf_token %}
+            <div class="field">
+                <label>Имя команды</label>
+                <div class="control">
+                    <input type="text" name="name" id="id_name" v-model="name" placeholder="Имя команды">
+                </div>
+            </div>
+            <div class="field">
+                <label>Описание команды</label>
+                <div class="control">
+                    <input type="text" name="description" id="id_description" v-model="description" placeholder="Описание">
+                </div>
+            </div>
+            <div class="field">
+                <label>Колличество человек </label>
+                <div class="control">
+                    <input type="text" name="count_of_players" id="id_count_of_players" v-model="count_of_players" placeholder="Колличество человек">
+                </div>
+            </div>
+            <div class="notification is-danger" v-if="errors.length">
+                <p v-for="error in errors"> [[ error  ]]</p>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="btn btn-primary" type="submit"> Подтвердить и обновить </button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
+
+{% block scripts %}
+<script>
+    const TeamApp = {
+        data() {
+            return {
+                name: '{{ team.name }}',
+                description: '{{ team.description }}',
+                count_of_players: '{{ team.count_of_players }}',
+                errors: []
+            }
+        },
+        delimiters: ['[[', ']]'],
+        methods: {
+            validateForm(e) {
+                this.errors = []
+
+                if (this.name) {
+                    return true
+                }
+                e.preventDefault()
+
+                this.errors.push('Имя команды обязательно');
+                return false
+            }
+        }
+    }
+    Vue.createApp(TeamApp).mount('#team-app')
+</script>
+{%endblock%}
+

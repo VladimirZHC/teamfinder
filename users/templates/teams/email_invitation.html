@@ -1,0 +1,27 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block title%}
+    Приглашение
+{%endblock%}
+
+{% block content %}
+
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><h1> Приглашение {{ team.name }} </h1></td>
+    </tr>
+    <tr>
+        <td>
+            <p> Вы были приглашены к присоединению к команде {{ team.name }}</p>
+            <p> Зарегестрируйтесь или войдите в учетную систему. Ваш код приглашения в команду - {{ code }}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="{{ acceptation_url }}"> Принять приглашение </a>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

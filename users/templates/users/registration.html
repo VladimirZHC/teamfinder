@@ -1,0 +1,62 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/reg.css' %}">
+{% endblock %}
+
+
+{% block title%}
+    Регистрация
+{%endblock%}
+
+{% block content %}
+    <div class="frame-419" id="regID">
+        <div class="text_label-n" id="textregID"> Регистрация </div>
+        <div class="frame-422">
+            <form method="post" class="frame-417" id="reg_form">
+                {% csrf_token %}
+                <div class="frame-415" id="pairframeID1">
+                    <div class="full-name-form">
+                        <input type="text" name="full_name" maxlength="100" class="frame-44" placeholder="Имя и Фамилия" id="id_full_name" title="Имя пользователя(обязательно)">
+                        <div class="error1"></div>
+                    </div>
+                    <div class="email-form" id="emailformID">
+                        <input type="email" name="email" maxlength="100" autofocus="" class="frame-44" placeholder="Еmail" id="id_email" title="Почта пользователя(обязательно)">
+                        <div class="error2"></div>
+                    </div>
+                    <div class="erroremail">
+                        {% for error in form.errors.email %}
+                            Пользователь с таким <b> email </b> уже существует!
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="frame-415" id="pairframeID">
+                    <input type="text" name="phone_number" maxlength="50" class="frame-44 check" placeholder="Телефон" id="id_phone_number" pattern="\+?[0-9\s\-\(\)]+" title="Поле должно содержать только цифры">
+                    <input type="text" name="date_birth" maxlength="50" class="frame-44 check" placeholder="Год рождения" id="id_date_birth" title="Год рождения(4 цифры)" pattern="[0-9]{4}">
+                </div>
+                <div class="frame-49">
+                    <div class="errorpass">
+                        {{ form.errors.password2 }}
+                    </div>
+                    <input type="password" name="password1" autocomplete="new-password" class="frame-44" placeholder="Пароль"  id="id_password1" title="Пароль(обязательно)">
+                    <div class="error"></div>
+                </div>
+                <div class="frame-40"> 
+                    <input type="password" name="password2" autocomplete="new-password" class="frame-44" placeholder="Подтвердите пароль"  id="id_password2" title="Подтверждение пароля(обязательно)">
+                    <div class="error"></div>
+                </div>
+                <div class="frame-47">
+                    <button class="btn btn-primary" type="submit"> Зарегестрироваться </button>
+                </div>
+            </form>
+            <div class="x86">Есть аккаунт? <a href="{% url 'login' %}" class="pref"> Войти</a></div>
+        </div>
+    </div>
+{%endblock%}
+
+{% block scripts %}
+    <script src="{% static 'users/js/reg.js' %}" defer></script>
+{% endblock %}
+
+

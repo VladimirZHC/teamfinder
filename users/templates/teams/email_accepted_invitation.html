@@ -1,0 +1,21 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block title%}
+    Принято
+{%endblock%}
+
+{% block content %}
+
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><h1> Приглашение </h1></td>
+    </tr>
+    <tr>
+        <td>
+            <p> {{ invitation.email }} принял ваше пприглашение </p>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

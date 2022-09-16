@@ -1,0 +1,167 @@
+@media screen and (max-width: 924px) {
+    #passresetID {
+        align-items: flex-start;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        justify-content: center;
+        max-width: 500px;
+        margin: 50px 50px;
+    }
+    #textresetID {
+        background-color: transparent;
+        color: #3f3f3f;
+        font-family: 'Lato', sans-serif;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 1.05px;
+        line-height: normal;
+        margin-top: -1px;
+        margin-left: 0;
+        min-width: 363px;
+        mix-blend-mode: normal;
+        display: flex;
+        position: relative;
+    }
+}
+
+
+.frame-225 {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: auto;
+    justify-content: center;
+    max-width: 450px;
+    margin: 200px auto;
+}
+
+
+
+.frame-224 {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    position: relative;
+    width: auto;
+}
+
+.btn {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px solid rgba(111, 142, 255, 1);
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    padding: 12px 20px;
+    position: relative;
+    width: 283px;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color: #617AD1;
+    border: 1px solid #617AD1;
+}
+
+::placeholder {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(150, 148, 148);
+    background-color: transparent;
+    flex: 1;
+    letter-spacing: 0px;
+    line-height: 26px;
+    margin-top: -0.5px;
+    mix-blend-mode: normal;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+  }
+
+.frame-4-c {
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    height: auto;
+    margin-bottom: -1px;
+    margin-left: -1px;
+    margin-top: -1px;
+    mix-blend-mode: normal;
+    padding: 10px 10px 10px 15px;
+    position: relative;
+    width: 300px;
+    border: 1px solid rgb(199, 197, 197);
+    justify-content: center;
+}
+
+.text-label-m {
+    background-color: transparent;
+    color: #3f3f3f;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.05px;
+    line-height: normal;
+    min-width: 363px;
+    mix-blend-mode: normal;
+    display: flex;
+    position: relative;
+}
+
+.btn1 {
+    align-items: flex-start;
+    background-color: transparent;
+    border: 1px solid rgba(111, 142, 255, 1);
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    padding: 12px 20px;
+    position: relative;
+    width: 233px;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    color: rgba(111, 142, 255, 1);
+}
+
+.btn1:hover {
+    background-color: #617AD1;
+    border: 1px solid #617AD1;
+    color: white;
+}
+
+.errorlist2 {
+    color: rgb(240, 24, 24);
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    gap: 5px;
+    display: flex;
+}
+
