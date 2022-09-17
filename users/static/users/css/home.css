@@ -64,7 +64,9 @@
         top: 260px;
         width: min-content;
     }
-
+    #pagesID {
+        margin-left: 50px;
+    }
 }
 
 
