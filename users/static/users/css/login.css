@@ -19,8 +19,7 @@
     flex-direction: column;
     gap: 10px;
     height: auto;
-    justify-content: center;
-    max-width: 600px;
+    max-width: 500px;
     margin: 200px auto;
 }
 
@@ -227,7 +226,8 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    position: relative;
+    max-width: 302px;
+    text-align: center;
 }
 
 
