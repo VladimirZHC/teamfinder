@@ -21,7 +21,7 @@
             <h3 class="is-size-5"><a href="{% url 'update-team' team.id %}" class="ml-2">
                 <button class="btn btn-outline-info">Изменить команду </button>
             </a></h3>
-            <h3 class="is-size-5"><a href="{% url 'invite' %}" class="ml-2">
+            <h3 class="is-size-5"><a href="" class="ml-2">
                 <button class="btn btn-outline-info"> Пригласить участников  </button>
             </a></h3>
         </div>
@@ -38,7 +38,7 @@
         {% endfor %}
         {{ team.members.all|length }} / {{team.count_of_players}}
         <h2 class="subtitile mt-6"> Желающие вступить </h2>
-        <h3 class="is-size-5"><a href="{% url 'invite' %}" class="ml-2">
+        <h3 class="is-size-5"><a href="" class="ml-2">
             <button class="btn btn-outline-info"> Оставить заявку  </button>
         </a></h3>
     </div>

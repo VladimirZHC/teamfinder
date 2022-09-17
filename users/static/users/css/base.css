@@ -136,8 +136,8 @@ body {
     #aboutID {
         letter-spacing: 0;
         line-height: 26px;
-        margin-bottom: 32px;
-        margin-left: 12px;
+        margin-bottom: 35px;
+        margin-left: -120px;
         min-height: 26px;
         min-width: 52px;
         white-space: nowrap;
@@ -145,9 +145,9 @@ body {
     #contactiID {
         letter-spacing: 0;
         line-height: 26px;
-        margin-bottom: -19px;
-        margin-left: -52px;
-        min-height: 26px;
+        margin-top: 60px;
+        margin-left: -120px;
+        min-height: 46px;
         min-width: 90px;
     }
     #socialID {
@@ -155,17 +155,30 @@ body {
         background-color: transparent;
         display: flex;
         flex-direction: column;
-        gap: 8px;
         height: min-content;
         right: 10px;
         position: absolute;
-        width: min-content;
-        text-decoration: none;
+        width: min-content
     }
     header>div#dropID {
         display: inline-block;
         position: relative;
         left: 130px;
+    }
+    #logoID {
+        visibility: hidden;
+    }
+    #footericonID {
+        align-items: flex-start;
+        background-color: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        height: min-content;
+        position: absolute;
+        right: 160px;
+        gap: 7px;
+        margin-top: 10px;
+        width: 80px;
     }
 }
 
@@ -554,10 +567,10 @@ body {
     background-color: transparent;
     display: flex;
     height: min-content;
+    position: absolute;
     gap: 17px;
     margin-top: 6px;
     right: 504px;
-    position: absolute;
     width: 102px;
 }
 
