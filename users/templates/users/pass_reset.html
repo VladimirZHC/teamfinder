@@ -17,12 +17,19 @@
                 <div class="errorlist-email"> {{ mess }}</div>
             {%endfor%}
         {% endif %}
-        <form method="post" class="frame-124">
+        <form method="post" class="frame-124" id="pass-reset-form-id">
             {% csrf_token %}
             {{ form.errors }}
-            <input class="frame-4" type="email" name="email" autocomplete="email" maxlength="254" required="" id="id_email" placeholder="Email">
+            <div class="passform">
+                <input class="frame-4" type="email" name="email" autocomplete="email" maxlength="254" id="id_email" placeholder="Email">
+                <div class="error"></div>
+            </div>
             <button class="btn btn-outline-primary" type="submit"> Прислать подтверждение </button>
         </form>
     </div>
 {%endblock%}
+
+{% block scripts %}
+    <script src="{% static 'users/js/pass-reset.js' %}" defer></script>
+{% endblock %}
 

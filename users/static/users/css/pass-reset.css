@@ -218,3 +218,12 @@
     font-weight: 400;
     position: relative;
 }
+
+.danger::-webkit-input-placeholder {
+    color: #e90a0a
+}
+
+.error {
+    color: red;
+    font-size: 14.5px;
+}

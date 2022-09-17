@@ -115,9 +115,6 @@
     font-family: 'Lato', sans-serif;
   }
 
-.danger::-webkit-input-placeholder {
-    color: #e90a0a
-}
 
 .frame-7 {
     top: 25px;
