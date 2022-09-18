@@ -212,10 +212,11 @@ input[type=text] {
     transition-timing-function: ease-in-out;
     -webkit-transition: 400ms;
     -webkit-transition-timing-function: ease-in-out;
+    box-shadow: 0 10px 10px -5px rgb(204, 200, 200);
 }
 
 .frame-19:hover {
-    border: 2px solid #93a7f0;
+    box-shadow: 5px 5px 20px rgb(165, 162, 162);
 }
 
 .frame-26 {
