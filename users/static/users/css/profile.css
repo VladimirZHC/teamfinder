@@ -419,3 +419,54 @@
     margin-top: 20px;
 }
 
+.alert {
+    top: 130px;
+    align-items: flex-start;
+    border: 1px none;
+    border-radius: 8px;
+    display: flex;
+    height: auto;
+    mix-blend-mode: normal;
+    padding: 5px 5px;
+    width: auto;
+    background-color: #45b93a;
+    color: white;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+}
+
+.btn-close {
+    background:none;
+    border:none;
+    cursor:pointer;
+    display: flex;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    outline: none;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.icon-close {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    fill: white;
+    stroke: white;
+} 
+
+.btn-close:hover {
+    transform: scale(1.09);
+    border: none;
+    background: none;
+    outline: none;
+}

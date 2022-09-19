@@ -129,10 +129,10 @@ class Profile(models.Model):
         if self.date_birth:
             year = int(self.date_birth)
             age = now.year - year
-            if 11 <= age <= 19 or age % 10 == 1:
-                return f"{age} год"
-            elif 2 <= age % 10 <= 4:
+            if (age % 10 >= 2 and age % 10 <= 4 and age / 10 != 1):
                 return f"{age} года"
+            elif (age % 10 == 1 and age / 10 != 1):
+                return f"{age} год"
             else:
                 return f"{age} лет"
         else:
