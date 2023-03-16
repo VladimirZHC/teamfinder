@@ -22,14 +22,14 @@ const sendSearchData = (game) => {
                     <br>
                                     <div class="item">
                                         <div class="row mt-2 mb-2">
-                                            <div class="col-4"> 
+                                            <div class="col-3 user-image"> 
                                                 <img src="${game.img}" class="game-img">
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <h5> ${game.full_name} </h5>
                                                 <p class="text-muted"> ${game.email}</p>
                                             </div>
-                                            <div class="col-4">
+                                            <div class="col-3">
                                                 <input type="button" class="btn btn-outline-info" value="Посмотреть профиль" onClick='window.location.href = "/profile/${game.pk}"'>
                                             </div>
                                         </div> 
@@ -60,4 +60,15 @@ searchInput.addEventListener('keyup', e=>{
     }
 
     sendSearchData(e.target.value)
+})
+
+htmx.onLoad(function(content) {
+    var sortables = content.querySelectorAll(".sortable");
+    for (var i = 0; i < sortables.length; i++) {
+      var sortable = sortables[i];
+      new Sortable(sortable, {
+          animation: 150,
+          ghostClass: 'blue-background-class'
+      });
+    }
 })

@@ -69,20 +69,21 @@ class UserTeamView(ListView):
     
 class TeamDetailView(DetailView):
     template_name = 'teams/team.html'
-    model = Team      
-      
+    model = Team
+        
     def get_context_data(self, **kwards):
         ctx = super(TeamDetailView, self).get_context_data(**kwards)
         ctx['team'] = Team.objects.get(pk=self.kwargs['pk'])
         return ctx
-    
+
+
 class BaseView(ListView):
     model = Team
     template_name = 'users/home.html'
     context_object_name = "target"
-    paginate_by =  16
-    
-    
+    paginate_by = 16
+
+
 def update_profile(request, user_id):
     users_ind = get_object_or_404(CustomUser, pk=user_id)
     if request.user.is_authenticated and request.user.id == user_id:
@@ -101,11 +102,12 @@ def update_profile(request, user_id):
         data = {
             'user': users_ind,
             'profileForm': profileForm,
-            'imageForm' : imageForm,
+            'imageForm': imageForm,
         }
     else:
         return redirect('login')
     return render(request, 'users/update_profile.html', data)
+
 
 def search_results_users(request):
     if request.is_ajax():
@@ -119,14 +121,15 @@ def search_results_users(request):
                     'pk': pos.pk,
                     'img': str(pos.img.url),
                     'full_name': pos.full_name,
-                    'email' : pos.email
+                    'email': pos.email
                 }
                 data.append(item)
             res = data
         else:
             res = 'Не найдено'
         return JsonResponse({'data': res})
-    return render(request, 'users/search.html',)
+    return render(request, 'teams/team_create.html',)
+
 
 def add_team(request):
     if request.method == 'POST':
@@ -147,22 +150,19 @@ def add_team(request):
             return redirect('user-teams', profile.id)
     return render(request, 'teams/team_create.html')
 
+
 def update_team(request, team_id):
     team = get_object_or_404(Team, pk=team_id, members__in=[request.user])
-    
     if request.method == 'POST':
         name = request.POST.get('name')
         description = request.POST.get('description')
         count_of_players = request.POST.get('count_of_players')
-        
         if name and description and count_of_players:
             team.name = name
             team.description = description
             team.count_of_players = count_of_players
             team.save()
-            
             messages.success(request, f'Команда {team.name} была успешно обновлена!')
-            
             return redirect('home')
     return render(request, 'users/update_team.html', {'team': team})
 
