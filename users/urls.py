@@ -8,7 +8,7 @@ from .forms import *
 urlpatterns = [
     path('reg/', userViews.CreateUser.as_view(template_name='users/registration.html'), name='reg'),
     path('login/', views.LoginView.as_view(
-        template_name = 'users/login.html', 
+        template_name='users/login.html',
         redirect_field_name='home'
     ),
         name='login'
@@ -17,7 +17,10 @@ urlpatterns = [
     path('exit/', views.LogoutView.as_view(template_name='users/exit.html'), name='exit'),
     path('upprofile/<int:user_id>/', userViews.update_profile, name='update_profile'),
     path('pass-reset/', userViews.password_reset_request, name='pass-reset'),
-    path('password_reset_complete/', views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
+    path('password_reset_complete/', views.PasswordResetCompleteView.as_view(
+        template_name='users/password_reset_complete.html'),
+        name='password_reset_complete'
+         ),
     path('password_reset_confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
     path('password_reset_done/', views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path("", userViews.BaseView.as_view(), name="home"),

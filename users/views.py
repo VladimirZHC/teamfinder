@@ -1,19 +1,14 @@
 from django.shortcuts import render, get_object_or_404
-from .forms import  (
-    CustomUserCreationForm, 
+from .forms import (
+    CustomUserCreationForm,
     ProfileUpdateForm,
     ProfileImageForm,
     )
 from django.views.generic import (
-    ListView, 
-    DetailView, 
-    CreateView, 
-    UpdateView, 
-    DeleteView, 
-    View, 
-    TemplateView,
+    ListView,
+    DetailView,
+    CreateView,
     )
-from .utilities import send_invitation, send_invitation_accepted
 from django.urls import reverse_lazy
 from .models import CustomUser, Profile, Team
 from django.shortcuts import render, redirect
@@ -21,56 +16,54 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import JsonResponse
-import random
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.contrib.auth.forms import PasswordResetForm
 from django.template.loader import render_to_string
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
-from django.views.generic.list import MultipleObjectMixin
 
 
-
-class CreateUser(SuccessMessageMixin,CreateView):
+class CreateUser(SuccessMessageMixin, CreateView):
     form_class = CustomUserCreationForm
     model = CustomUser
     success_url = reverse_lazy("login")
     template_name = 'users/registration.html'
     success_message = "%(email)s был создан!"
-    
-    
+
     def get_success_message(self, cleaned_data):
         return self.success_message % dict(
             cleaned_data,
             email=self.object.email,
         )
-        
+
+
 class ProfileDetailView(DetailView):
     template_name = 'users/profile.html'
     model = Profile
-    
+
     def get_context_data(self, **kwards):
         ctx = super(ProfileDetailView, self).get_context_data(**kwards)
         ctx['target'] = Profile.objects.get(pk=self.kwargs['pk'])
         return ctx
-    
+
+
 class UserTeamView(ListView):
     template_name = 'teams/user-teams.html'
     model = Profile
     paginate_by = 4
-    
+
     def get_context_data(self, **kwards):
         ctx = super(UserTeamView, self).get_context_data(**kwards)
         ctx['target'] = Profile.objects.get(pk=self.kwargs['pk'])
         return ctx
-    
-    
+
+
 class TeamDetailView(DetailView):
     template_name = 'teams/team.html'
     model = Team
-        
+
     def get_context_data(self, **kwards):
         ctx = super(TeamDetailView, self).get_context_data(**kwards)
         ctx['team'] = Team.objects.get(pk=self.kwargs['pk'])
@@ -136,17 +129,19 @@ def add_team(request):
         name = request.POST.get('name')
         description = request.POST.get('description')
         count_of_players = request.POST.get('count_of_players')
-        
         if name and description and count_of_players:
-            team = Team.objects.create(name=name, description=description, count_of_players=count_of_players, owner=request.user)
+            team = Team.objects.create(
+                name=name,
+                description=description,
+                count_of_players=count_of_players,
+                owner=request.user
+                )
             team.members.add(request.user)
             team.save()
-            
             profile = request.user.profile
             profile.active_team_id = team.id
             profile.teams.add(team)
             profile.save()
-            
             return redirect('user-teams', profile.id)
     return render(request, 'teams/team_create.html')
 
@@ -200,17 +195,17 @@ def password_reset_request(request):
                     subject = 'Запрос на восстановление пароля'
                     email_template_name = 'users/email_message.txt'
                     parameters = {
-                        'name' : user.profile.full_name,
-                        'email' : user.email,
+                        'name': user.profile.full_name,
+                        'email': user.email,
                         'domain': '127.0.0.1:8000',
                         'site_name': 'TeamFinder',
                         'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                         'token': default_token_generator.make_token(user),
                         'protocol': 'http',
-                    }   
+                    }
                     email = render_to_string(email_template_name, parameters)
                     try:
-                        send_mail(subject,email, '', [user.email], fail_silently=False)
+                        send_mail(subject, email, '', [user.email], fail_silently=False)
                     except:
                         return HttpResponse('Invalid Header')
                     return redirect('password_reset_done')
@@ -222,7 +217,7 @@ def password_reset_request(request):
         'password_form': password_form,
     }
     return render(request, 'users/pass_reset.html', context)
-    
+
 
 # def create_team(request):
 #     if request.method == "POST":

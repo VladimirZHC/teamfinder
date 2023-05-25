@@ -3,4 +3,4 @@ venv/
 *.sqlite3
 __pycache__/
 migrations/
-user_mages/
+pictures/user_images
