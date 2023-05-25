@@ -130,8 +130,3 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 # DEFAULT_EMAIL_FROM = 'Приглашение от <sluhaivova@gmail.com>'
 # ACCEPTATION_URL = 'http://127.0.0.1/signup/'
-
-
-
-
-
