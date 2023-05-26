@@ -9,6 +9,7 @@ let id = (id) => document.getElementById(id);
             form = id("reg_form"),
             errorMsg = classes("error");
             
+            
         
         
         form.addEventListener("submit", (e) => {
@@ -16,12 +17,12 @@ let id = (id) => document.getElementById(id);
             
             if (fullname.value.trim() === "" || email.value.trim() === "" || password1.value.trim() === "" || password2.value.trim() === "") {
                 fullname.style.border = "2px solid red";
-                email.style.border = "2px solid red";
-                password1.style.border = "2px solid red";
-                password2.style.border = "2px solid red";
                 fullname.classList.add('danger')
+                email.style.border = "2px solid red";
                 email.classList.add('danger')
+                password1.style.border = "2px solid red";
                 password1.classList.add('danger')
+                password2.style.border = "2px solid red";
                 password2.classList.add('danger')
                 errorMsg[0].innerHTML = "Поле обязательное*";
                 errorMsg[1].innerHTML = "Поле обязательное*";
@@ -30,19 +31,19 @@ let id = (id) => document.getElementById(id);
             } 
             if (fullname.value.trim() != "") {
                 fullname.style.border = "2px solid green";
-                errorMsg1[0].innerHTML = "";
+                errorMsg[0].innerHTML = "";
             } 
             if (email.value.trim() !== "") {
                 email.style.border = "2px solid green";
-                errorMsg2[0].innerHTML = "";
+                errorMsg[1].innerHTML = "";
             }
             if (password1.value.trim() != "") {
                 password1.style.border = "2px solid green";
-                errorMsg[0].innerHTML = "";
+                errorMsg[2].innerHTML = "";
             }
             if (password2.value.trim() != "") {
                 password2.style.border = "2px solid green";
-                errorMsg[1].innerHTML = "";
+                errorMsg[3].innerHTML = "";
             }
             if (fullname.value.trim() != "" && email.value.trim() != "" && password1.value.trim() != "" && password2.value.trim() != "") {
                 form.submit();

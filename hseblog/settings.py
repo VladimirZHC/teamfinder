@@ -120,7 +120,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 
 
 LOGIN_REDIRECT_URL = 'home'
-DEFAULT_FROM_EMAIL = 'TeamFinder <sluhaivova015@gmail.com>'
+DEFAULT_FROM_EMAIL = f'TeamFinder <{env("DEFAULT_FROM_EMAIL")}>'
 EMAIL_BACKEND = env('EMAIL_BACKEND')
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = 587
