@@ -7,9 +7,8 @@ let id = (id) => document.getElementById(id);
             password1 = id("id_password1"),
             password2 = id("id_password2"),
             form = id("reg_form"),
-            errorMsg = classes("error"),
-            errorMsg1 = classes("error1"),
-            errorMsg2 = classes("error2");
+            errorMsg = classes("error");
+            
         
         
         form.addEventListener("submit", (e) => {
@@ -24,10 +23,10 @@ let id = (id) => document.getElementById(id);
                 email.classList.add('danger')
                 password1.classList.add('danger')
                 password2.classList.add('danger')
-                errorMsg1[0].innerHTML = "Поле обязательное*";
-                errorMsg2[0].innerHTML = "Поле обязательное*";
                 errorMsg[0].innerHTML = "Поле обязательное*";
                 errorMsg[1].innerHTML = "Поле обязательное*";
+                errorMsg[2].innerHTML = "Поле обязательное*";
+                errorMsg[3].innerHTML = "Поле обязательное*";
             } 
             if (fullname.value.trim() != "") {
                 fullname.style.border = "2px solid green";

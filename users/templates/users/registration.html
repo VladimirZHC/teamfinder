@@ -19,11 +19,11 @@
                 <div class="frame-415" id="pairframeID1">
                     <div class="full-name-form">
                         <input type="text" name="full_name" maxlength="100" class="frame-44" placeholder="Имя и Фамилия" id="id_full_name" title="Имя пользователя(обязательно)">
-                        <div class="error1"></div>
+                        <div class="error"></div>
                     </div>
                     <div class="email-form" id="emailformID">
                         <input type="email" name="email" maxlength="100" autofocus="" class="frame-44" placeholder="Еmail" id="id_email" title="Почта пользователя(обязательно)">
-                        <div class="error2"></div>
+                        <div class="error"></div>
                         <div class="erroremail" id="erroremailID">
                         {% for error in form.errors.email %}
                             Пользователь с таким <b> email </b> уже существует!
