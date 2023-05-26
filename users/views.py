@@ -158,9 +158,8 @@ def update_team(request, team_id):
             team.description = description
             team.count_of_players = count_of_players
             team.save()
-            messages.success(request, f'Команда {team.name} была успешно обновлена!')
-        else:
-            return redirect('home')
+            messages.success(request, f'Команда "{team.name}" была успешно обновлена!')
+            return redirect('team', pk=team_id)
     return render(request, 'teams/update_team.html', {'team': team})
 
 

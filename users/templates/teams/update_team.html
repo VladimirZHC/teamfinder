@@ -10,7 +10,7 @@
 <div class="columns" id="team-app">
     <div class="column is-4">
         <h1 class="title"> Редактируй команду </h1>
-        <form method="post" action="." @submit="validateForm">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="field">
                 <label>Имя команды</label>
@@ -30,9 +30,9 @@
                     <input type="text" name="count_of_players" id="id_count_of_players" v-model="count_of_players" placeholder="Колличество человек">
                 </div>
             </div>
-            <div class="notification is-danger" v-if="errors.length">
+            <!-- <div class="notification is-danger" v-if="errors.length">
                 <p v-for="error in errors"> [[ error  ]]</p>
-            </div>
+            </div> -->
             <div class="field">
                 <div class="control">
                     <button class="btn btn-primary" type="submit"> Подтвердить и обновить </button>
@@ -43,7 +43,7 @@
 </div>
 {%endblock%}
 
-{% block scripts %}
+<!-- {% block scripts %}
 <script>
     const TeamApp = {
         data() {
@@ -71,5 +71,5 @@
     }
     Vue.createApp(TeamApp).mount('#team-app')
 </script>
-{%endblock%}
+{%endblock%} -->
 
