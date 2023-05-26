@@ -21,10 +21,15 @@ urlpatterns = [
         template_name='users/password_reset_complete.html'),
         name='password_reset_complete'
          ),
-    path('password_reset_confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'),
-    path('password_reset_done/', views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
+    path('password_reset_confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(
+        template_name='users/password_reset_confirm.html'),
+         name='password_reset_confirm'
+         ),
+    path('password_reset_done/', views.PasswordResetDoneView.as_view(
+        template_name='users/password_reset_done.html'),
+         name='password_reset_done'),
     path("", userViews.BaseView.as_view(), name="home"),
-    path('team-create/', userViews.search_results_users, name='search'),
+    # path('team-create/', userViews.search_results_users, name='search'),
     path('team-create/', userViews.add_team, name='team-create'),
     path('team/<int:pk>', userViews.TeamDetailView.as_view(), name='team'),
     path('profile/<int:pk>/user-teams', userViews.UserTeamView.as_view(), name='user-teams'),

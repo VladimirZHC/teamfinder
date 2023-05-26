@@ -3,6 +3,7 @@ from .forms import (
     CustomUserCreationForm,
     ProfileUpdateForm,
     ProfileImageForm,
+    TeamCreateForm
     )
 from django.views.generic import (
     ListView,
@@ -158,27 +159,28 @@ def update_team(request, team_id):
             team.count_of_players = count_of_players
             team.save()
             messages.success(request, f'Команда {team.name} была успешно обновлена!')
+        else:
             return redirect('home')
-    return render(request, 'users/update_team.html', {'team': team})
+    return render(request, 'teams/update_team.html', {'team': team})
 
 
 # def invite(request):
 #     team = get_object_or_404(Team, pk=request.user.profile.active_team_id, members__in=[request.user])
-    
+
 #     if request.method == 'POST':
 #         email = request.POST.get('email')
-        
+
 #         if email:
 #             invitations = Invite.objects.filter(team=team, email=email)
-            
+
 #             if not invitations:
 #                 code = ''.join(random.choice('abcdefghhijklmnopqrstuvwxyz1234567890') for i in range(4))
 #                 invitation = Invite.objects.create(team=team, email=email, code=code)
-                
+
 #                 messages.info(request, 'Пользователь был приглашен')
-                
+
 #                 send_invitation(email, code, team)
-                
+
 #                 return redirect('team', team_id=team.id)
 #             else:
 #                 messages.info(request, 'Пользователь уже приглашён')
@@ -230,11 +232,9 @@ def password_reset_request(request):
 #         teamForm = TeamCreateForm(request.POST)
 #         messages.error(request, 'Что-то пошло не так...')
 #     data = {
-#         'teamForm' : teamForm,
+#         'teamForm': teamForm,
 #     }
 #     return render(request, 'users/team_create.html', data)
-
-
 
 
 # class CreateTeamView(SuccessMessageMixin, CreateView):
@@ -243,27 +243,25 @@ def password_reset_request(request):
 #     template_name = 'users/team_create.html'
 #     success_message = "%(name)s был успешно создана!"
 #     form_class = TeamCreateForm
-    
-    
+
 #     def get_context_data(self, **kwards):
 #         ctx = super(CreateTeamView, self).get_context_data(**kwards)
 #         return ctx
-    
+
 #     def get_success_message(self, cleaned_data):
 #         return self.success_message % dict(
 #             cleaned_data,
 #             email=self.object.name,
 #         )
-        
+
 #     def form_valid(self, form):
 #         team = self.kwargs.get('id')
 #         form.instance.owner = self.request.user
 #         team.members.add(self.request.user)
 #         team.save()
 #         return super().form_valid(form)
-    
-        
+
 #     def form_invalid(self, form):
 #         messages.add_message(self.request, messages.ERROR, "Ошибка формы")
 #         return super().form_invalid(form)
-    
+

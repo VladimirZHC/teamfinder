@@ -14,7 +14,7 @@
 <div class="columns" id="team-app">
     <div class="column is-4">
         <h1 class="title"> Cоздай команду </h1>
-        <form method="post" action="." @submit="validateForm">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <!-- <div class="field">
                 <form autocomplete="off" id="search-form" method="post">
