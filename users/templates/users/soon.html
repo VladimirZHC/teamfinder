@@ -1,0 +1,23 @@
+{% extends 'users/base.html'%}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/css/soon.css' %}">
+{% endblock %}
+
+
+{% block title%}
+    Cтраница в разработке
+{%endblock%}
+
+{% block content %}
+<div  class="frame-10-c">
+    <img src="/pictures/soon.png" alt="error" width="512" height="512">
+    <p class="lato-bold-white-20px-c"> Разработка идет полным ходом! </p>
+</div>
+{%endblock%}
+
+
+{% block scripts %}
+    <script src="{% static 'users/js/login.js' %}" defer></script>
+{% endblock %}

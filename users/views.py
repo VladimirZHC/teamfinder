@@ -75,7 +75,7 @@ class BaseView(ListView):
     model = Team
     template_name = 'users/home.html'
     context_object_name = "target"
-    paginate_by = 16
+    paginate_by = 12
 
 
 def update_profile(request, user_id):
@@ -103,28 +103,6 @@ def update_profile(request, user_id):
     return render(request, 'users/update_profile.html', data)
 
 
-def search_results_users(request):
-    if request.is_ajax():
-        res = None
-        game = request.POST.get('game')
-        qs = Profile.objects.filter(Q(full_name__icontains=game) | Q(email__icontains=game))
-        if len(qs) > 0 and len(game) > 0:
-            data = []
-            for pos in qs:
-                item = {
-                    'pk': pos.pk,
-                    'img': str(pos.img.url),
-                    'full_name': pos.full_name,
-                    'email': pos.email
-                }
-                data.append(item)
-            res = data
-        else:
-            res = 'Не найдено'
-        return JsonResponse({'data': res})
-    return render(request, 'teams/team_create.html',)
-
-
 def add_team(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -143,7 +121,26 @@ def add_team(request):
             profile.active_team_id = team.id
             profile.teams.add(team)
             profile.save()
+            messages.success(request, f'Команда "{team.name}" была успешно создана!')
             return redirect('user-teams', profile.id)
+    if request.is_ajax():
+        res = None
+        game = request.POST.get('game')
+        qs = Profile.objects.filter(Q(full_name__icontains=game) | Q(email__icontains=game))
+        if len(qs) > 0 and len(game) > 0:
+            data = []
+            for pos in qs:
+                item = {
+                    'pk': pos.pk,
+                    'img': str(pos.img.url),
+                    'full_name': pos.full_name,
+                    'email': pos.email
+                }
+                data.append(item)
+            res = data
+        else:
+            res = 'Не найдено'
+        return JsonResponse({'data': res})
     return render(request, 'teams/team_create.html')
 
 
@@ -218,6 +215,10 @@ def password_reset_request(request):
         'password_form': password_form,
     }
     return render(request, 'users/pass_reset.html', context)
+
+
+def soon_page(request):
+    return render(request, 'users/soon.html')
 
 
 # def create_team(request):

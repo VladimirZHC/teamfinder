@@ -14,16 +14,16 @@
 <div class="columns" id="team-app">
     <div class="column is-4">
         <h1 class="title"> Cоздай команду </h1>
+        <div class="field">
+            <form autocomplete="off" id="search-form" method="post">
+                {% csrf_token %}
+                <input type="text" id="search-input" class="text_label" placeholder="Поиск пользователей">
+            </form>
+            <div id="results-box" class="results-card not-visible">
+            </div>   
+        </div>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <!-- <div class="field">
-                <form autocomplete="off" id="search-form" method="post">
-                    {% csrf_token %}
-                    <input type="text" id="search-input" class="text_label" placeholder="Поиск пользователей">
-                </form>
-                <div id="results-box" class="results-card not-visible">
-                </div>   
-            </div> -->
             <div class="field">
                 <label>Имя команды</label>
                 <div class="control">
